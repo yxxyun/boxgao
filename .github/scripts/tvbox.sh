@@ -1,9 +1,12 @@
 #!/bin/bash
 
-find $GITHUB_WORKSPACE -maxdepth 3 -type f -name "*.json"
+find $GITHUB_WORKSPACE -maxdepth 1 -type f -name "*.json"
 
 for file in $(find $GITHUB_WORKSPACE -maxdepth 1 -type f -name "*.json"); do
 	sed -i '/^{"name":"磁力廣告"/ s/"regex":.*\]},/"regex":\["更多","最新","更新","直播","社區","社区","有趣","新葡京","英皇体育","新片首发","xuu","UUE29"\]},/' $file 2>/dev/null
+done
+for file in $(find $GITHUB_WORKSPACE -maxdepth 3 -type f -name "*.json"); do
+	sed -i 's|assets://js|.|g' $file 2>/dev/null
 done
 sed -szi 's|"ads":\[.*\]|"ads":\["raw.githubusercontent.com",\
 ".*boku.*",\
@@ -80,4 +83,3 @@ sed -szi 's|"ads":\[.*\]|"ads":\["raw.githubusercontent.com",\
 "z7.cnzz.com",\
 "z8.cnzz.com"\]|' $GITHUB_WORKSPACE/js.json 2>/dev/null
 # rm -rf $GITHUB_WORKSPACE/9918.json
-sed -szi 's|assets://js|.|g' $GITHUB_WORKSPACE/cat/js/config_open.json $GITHUB_WORKSPACE/cat/js/config_open99.json 2>/dev/null
