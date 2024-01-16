@@ -80,4 +80,4 @@ sed -szi 's|"ads":\[.*\]|"ads":\["raw.githubusercontent.com",\
 "z7.cnzz.com",\
 "z8.cnzz.com"\]|' $GITHUB_WORKSPACE/js.json 2>/dev/null
 # rm -rf $GITHUB_WORKSPACE/9918.json
-sed -szi 's/assets:\/\/js/./g' $GITHUB_WORKSPACE/cat/js/config_open.json $GITHUB_WORKSPACE/cat/js/config_open99.json 2>/dev/null
+sed -szi 's|assets://js|.|g' $GITHUB_WORKSPACE/cat/js/config_open.json $GITHUB_WORKSPACE/cat/js/config_open99.json 2>/dev/null
