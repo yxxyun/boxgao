@@ -82,7 +82,7 @@ sed -szi 's|"ads":\[.*\]|"ads":\["raw.githubusercontent.com",\
 # rm -rf $GITHUB_WORKSPACE/9918.json
 
 for file in $(find $GITHUB_WORKSPACE/cat/js -maxdepth 1 -type f -name "*.json"); do
-	sed -i s|assets://js|.|g' $file 2>/dev/null
+	sed -i 's|assets://js|.|g' $file 2>/dev/null
 done
 # sed -szi 's|assets://js|.|g' $GITHUB_WORKSPACE/cat/js/config_open.json $GITHUB_WORKSPACE/cat/js/config_open99.json 2>/dev/null
 
