@@ -104,9 +104,9 @@ jobs:
       continue-on-error: true
       if: steps.compareHash.outputs.cache-hit != 'true' || github.event.inputs.ENABLE_FORCE_SYNC_UPSTREAM == 'true'
       run: |
-        for file in $(find ./ -maxdepth 3 -type f -name "*.json"); do
-        	sed -i 's/assets:\/\/js/./g' $file
-        done
+        #for file in $(find ./ -maxdepth 3 -type f -name "*.json"); do
+        #	sed -i 's/assets:\/\/js/./g' $file
+        #done
         #rm -rf ./9918.json
         source .github/scripts/tvbox.sh
 
